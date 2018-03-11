@@ -1,0 +1,6 @@
+<h1>Companies edit</h1>
+<ul>
+<% @company.each do |company| %>
+    <li><%= link_to  company.id,company %></li>
+<% end %>
+
