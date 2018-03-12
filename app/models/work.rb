@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-    belongs_to:project
-    has_many:users
-    
+     belongs_to :project
+     belongs_to :user
+
 end
