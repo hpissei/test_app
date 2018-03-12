@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     belongs_to:company
-    belongs_to:project #foreign key
-    #:foreign key
+    belongs_to :company
+	has_many :works
+	has_many :projects, :through => :works
 end
