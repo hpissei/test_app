@@ -9,6 +9,26 @@
   </head>
 
   <body>
+  <header>
+  <canvas id="logocanvas"></canvas>
+  <nav class="navbar navbar-light"> 
+    
+    <div class="navbar-brand">
+         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><%= link_to "Home",root_path %></li>
+        <li><%= link_to "Project",project_index_path %></li>
+        <li><%= link_to "Work",work_index_path %></li>
+        <li><%= link_to "User",user_index_path %></li>
+           <li><%= link_to "Company",company_index_path %></li>
+    </ul>
+    </div>
+    </header>
+    
     <%= yield %>
   </body>
 </html>

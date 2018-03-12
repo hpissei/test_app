@@ -1,9 +1,4 @@
-@import "bootstrap";
-$li:"none";
-ul li{
-    list-style: none;
-    padding:10px;
-}
+#not working
 
 header
 {
@@ -11,4 +6,7 @@ header
     padding:2%  2% 1% 2%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+body{
+    background-color: tan;
 }
