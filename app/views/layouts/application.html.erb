@@ -10,7 +10,7 @@
 
   <body>
   <header>
-  <canvas id="logocanvas"></canvas>
+ <%= link_to content_tag('canvas', 'TimeTracker', id: 'logocanvas'), root_url %>
   <nav class="navbar navbar-light"> 
     
     <div class="navbar-brand">
@@ -28,7 +28,20 @@
     </ul>
     </div>
     </header>
-    
-    <%= yield %>
-  </body>
+    <section id="main">
+		<article>
+			<% [:notice, :alert].each do |level| %>
+				<% if flash[level] %>
+					<div class="flash <%= level %>"><%= flash[level] %></div>
+				<% end %>
+		    <% end %>
+			<%= yield %>
+		</article>
+		
+	</section>
+	<footer>
+    <p><u>Time Tracker is a <em>Sample Company</em> App</u></p>
+	</footer>
+</div>
+</body>
 </html>
