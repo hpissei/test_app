@@ -1,17 +1,18 @@
-<h1>Work</h1>
-<ul>
-<%= @works.each do |work| %>
-<li>
-    Project Name <%= work.project.project_name %>
-  </li>
-<li> 
- Project Company <%= work.project.company.name %>
-</li>
-<li>
-    <%= link_to work.id,work %>
-</li>
+<h1>Work index</h1>
+<table class="table">
+<% @works.each do |work| %>
+<tr>
+    <th>Work id</th>
+    <th>Work project</th>
+    <th>View Details</th>
+</tr>
+<tr>
+    <td><%= work.id %></td>
+    <td><%= work.project.project_name %></td>
+    <td><%= link_to "View Details",work %></td>
+</tr>
 <% end %>
+</table>
 
-<%= link_to "Home",root_path %>
 <%= link_to "Work Home",work_index_path %>
 

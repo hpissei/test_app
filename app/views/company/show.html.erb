@@ -1,8 +1,12 @@
-<h1>Show</h1>
-
-<p>Company id:<%= @show.id %></p>
-<p>Company name<%= @show.name %></p>
-
-<%= link_to "Home",root_path %>
-
+<h1>Company Show</h1>
+<table class="table table-striped ">
+<tr>
+    <th>Company Id</th>
+    <th>Company Name</th>
+</tr>
+<tr>
+<td><%= @show.id %></td>
+<td><%= @show.name %></td>
+</tr>
+</table>
 <%= link_to "Company Home",company_index_path %>

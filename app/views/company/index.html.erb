@@ -1,9 +1,17 @@
 <h1>Companies index</h1>
-<ul>
-<% @company.each do |company| %>
-    <li><%= link_to  company.name,company %></li>
-<% end %>
-<%= link_to "Home",root_path %>
+<table class="table">
+<tr>
+    <th>Company Id</th>
+    <th>Company Name</th>
+    <th>Company Projects</th>  <output>to work on company projects</output>
+</tr>
 
+<% @company.each do |company| %>
+    <tr>   
+        <td><%= company.id %> 
+        <td><%= link_to  company.name,company %></td>
+    </tr>
+<% end %>
+</table><br>
 <%= link_to "Company Home",company_index_path %>
 

@@ -1,9 +1,16 @@
 <h1>Work show using id</h1>
-<ul>
-<li>
-Work id<%= @work.id %>
-</li>
-</ul>
-
-<%= link_to "Home",root_path %>
+<table class="table">
+<tr>
+    <th>Work Id</th>
+    <th>Project Name</th>
+    <th>Work Project Company</th>
+    <th>User Name</th>
+</tr>
+<tr>
+<td><%= @work.id %></td>
+<td><%= @work.project.project_name %></td>
+<td><%= @work.project.company.name %></td>
+<td><%= @work.user.first_name+" "+@work.user.last_name %></td>
+</tr>
+</table>
 <%= link_to "Work Home",work_index_path %>

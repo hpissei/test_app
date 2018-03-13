@@ -1,6 +1,14 @@
 <h1>Project show</h1>
-<%= @project.project_name %>
-
+<table class="table">
+<tr>
+    <th>Project Name</th>
+    <th>Project Company</th>
+</tr>
+<tr>
+    <td><%= @project.project_name %></td>
+    <td><%= @company.name%>
+</tr>
+</table>
 <br>
-<%= link_to "Home",root_path %>
-<%= link_to "Project Home",project_index_path %>
+
+<%= link_to "All Projects",project_index_path %>
