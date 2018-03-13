@@ -1,4 +1,5 @@
 <h1>Company Show</h1>
+<output>to work on company projects</output>
 <table class="table table-striped ">
 <tr>
     <th>Company Id</th>
@@ -9,4 +10,7 @@
 <td><%= @show.name %></td>
 </tr>
 </table>
+<%= content_for :aside do %>
+    <% render 'sidebar' %>    
+<% end %>
 <%= link_to "Company Home",company_index_path %>

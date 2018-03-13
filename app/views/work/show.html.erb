@@ -5,12 +5,17 @@
     <th>Project Name</th>
     <th>Work Project Company</th>
     <th>User Name</th>
+    <th>Date Performed</th>
 </tr>
 <tr>
 <td><%= @work.id %></td>
 <td><%= @work.project.project_name %></td>
 <td><%= @work.project.company.name %></td>
 <td><%= @work.user.first_name+" "+@work.user.last_name %></td>
+<td><%= @work.date_performed %></td>
 </tr>
 </table>
+<%= content_for:aside do%>
+    <% render 'sidebar' %>
+<% end %>
 <%= link_to "Work Home",work_index_path %>

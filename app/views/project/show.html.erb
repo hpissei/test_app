@@ -3,12 +3,16 @@
 <tr>
     <th>Project Name</th>
     <th>Project Company</th>
+    <th>Project Default Rate</th>
 </tr>
 <tr>
     <td><%= @project.project_name %></td>
     <td><%= @company.name%>
+    <td><%= @project.default_rate %></td>
 </tr>
 </table>
 <br>
-
+<%= content_for :aside do %>
+    <% render 'sidebar' %>
+<% end %>
 <%= link_to "All Projects",project_index_path %>

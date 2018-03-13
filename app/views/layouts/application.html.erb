@@ -12,7 +12,7 @@
   <header>
  
 
- <%= image_tag("timetracker_logo_black.png", :alt => "logo",:width=>800 ,:height=>100) %>
+ <%= image_tag("timetracker_logo_black.png", :alt => "logo",:width=>800 ,:height=>80) %>
   <nav class="navbar navbar-light"> 
     
     <div class="navbar-brand">
@@ -31,6 +31,7 @@
     </div>
     </header>
     <section id="main">
+    
 		<article>
 			<% [:notice, :alert].each do |level| %>
 				<% if flash[level] %>
@@ -41,11 +42,14 @@
 		</article>
 		
 	</section>
-
+    <aside>
+        <%= yield :aside %>
+    </aside>    
 </div>
 
-	<footer>
-    <p><u>Time Tracker is a <em>Sample Company</em> App</u></p>
+  <footer>
+    <br>
+    <p style="color:white;"><b>Time Tracker is a <em>Sample Company</em> App</b></p>
   </footer>
 
 </body>

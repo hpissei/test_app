@@ -2,7 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color:tan;
-body
+footer{
+	height: 100px;
+	text-align: center;
+	
+	background-color: #0B486B;
+	bottom: 0px;
+	position:absolute;
+	width:100%;
+	position: fixed;
+}
+header
 {
-	background-color:$color;
+	height:200px;
 }

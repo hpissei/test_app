@@ -1,4 +1,7 @@
+//=require_tree
+
 @import "bootstrap";
+
 $li:"none";
 ul li{
     list-style: none;
@@ -11,10 +14,4 @@ header
     padding:2%  2% 1% 2%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
-footer p
-{
-    color:tan;
-    float:bottom;
-    margin-bottom: 100px;
 }

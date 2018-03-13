@@ -3,13 +3,14 @@
 <tr>
     <th>Company Id</th>
     <th>Company Name</th>
-    <th>Company Projects</th>  <output>to work on company projects</output>
+    <th>View Details</th>  
 </tr>
 
 <% @company.each do |company| %>
     <tr>   
         <td><%= company.id %> 
-        <td><%= link_to  company.name,company %></td>
+        <td><%= company.name %></td>
+        <td><%= link_to  "View Details",company %></td>
     </tr>
 <% end %>
 </table><br>
