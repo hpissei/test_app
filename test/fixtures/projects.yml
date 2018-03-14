@@ -4,8 +4,26 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+    id: 1
+    project_name: Energage
+    company_id: 1
+    default_rate: 80
 # column: value
 #
-two: {}
+two:
+    id: 2
+    project_name: SkillSurvey
+    company_id: 2
+    default_rate: 60
 # column: value
+three:
+    id: 3
+    project_name: Workterra
+    company_id: 3
+    default_rate: 70
+four:
+    id: 4
+    project_name: Pulse
+    company_id: 4
+    default_rate: 80

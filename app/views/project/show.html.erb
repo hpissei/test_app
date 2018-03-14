@@ -1,16 +1,7 @@
 <h1>Project show</h1>
-<table class="table">
-<tr>
-    <th>Project Name</th>
-    <th>Project Company</th>
-    <th>Project Default Rate</th>
-</tr>
-<tr>
-    <td><%= @project.project_name %></td>
-    <td><%= @company.name%>
-    <td><%= @project.default_rate %></td>
-</tr>
-</table>
+#using partial to display
+<%= render partial:"projectshow" %>
+
 <br>
 <%= content_for :aside do %>
     <% render 'sidebar' %>

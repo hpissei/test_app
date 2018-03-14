@@ -1,11 +1,12 @@
 <h1>Work index</h1>
 <table class="table">
-<% @works.each do |work| %>
 <tr>
     <th>Work id</th>
     <th>Work project</th>
     <th>View Details</th>
 </tr>
+<% @works.each do |work| %>
+
 <tr>
     <td><%= work.id %></td>
     <td><%= work.project.project_name %></td>

@@ -3,9 +3,25 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
+#put space between column and value
+one:
+  id: 1
+  name: Harbinger Systems
 # column: value
-#
-two: {}
+two:
+  id: 2
+  name: Infosys
+three:
+  id: 3
+  name: Persistence Systems
+four:
+  id: 4
+  name: Rakuten
+five:
+  id: 5
+  name: Fujitsu
+six:
+  id: 6
+  name: Cognizant
+
 # column: value
