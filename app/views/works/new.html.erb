@@ -1,0 +1,19 @@
+<h1>New Work Form</h1>
+<%= form_for(@work) do |w| %>
+    <div>
+     <%= w.label :project_id %>
+     <%= w.text_field :project_id %>
+    </div>
+    <div>
+        <%= w.label :user_id %>
+        <%= w.text_field :user_id %>
+    </div>
+    <div>
+        <%= w.label :date_performed %>
+        <%= w.text_field :date_performed %>
+    </div>
+    <div>
+        <%= w.submit "Create New Work" %>
+    </div>
+<% end %>
+<%= link_to "Work Home",works_path %>

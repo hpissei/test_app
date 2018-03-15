@@ -15,3 +15,8 @@ footer
     color:tan;
     margin-bottom: 0px;
 }
+input[type="text"]
+{
+    width:600px;
+    border-radius: 8px solid white;
+}

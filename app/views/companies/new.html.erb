@@ -1,0 +1,12 @@
+
+
+<%= form_for(@company) do |f| %>
+	<div><br>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.submit "Create Company" %>
+	</div>
+<% end %>
+<%= link_to "Company Home",companies_path %>

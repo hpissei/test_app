@@ -1,0 +1,21 @@
+<h1>Project New </h1>
+<%= form_for(@project) do |p|%>
+<br>
+<div>
+    <%= p.label :project_name %>
+    <%= p.text_field :project_name %>
+</div>
+<div>
+    <%= p.label :company_id %>
+    <%= p.text_field :company_id %>
+</div>
+<div>
+    <%= p.label :default_rate %>
+    <%= p.text_field :default_rate %>
+</div>
+
+<div>
+    <%= p.submit "Create Project" %>
+</div>
+<% end %>
+<%= link_to "Projects Home",projects_path %>

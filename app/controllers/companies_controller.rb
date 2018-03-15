@@ -1,10 +1,13 @@
-class CompanyController < ApplicationController
+class CompaniesController < ApplicationController
     def index
         @company=Company.all
     end
     #new form
     def new
         @company=Company.new
+    end
+    def create 
+
     end
     def show
         if(params[:name])

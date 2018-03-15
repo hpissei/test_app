@@ -1,0 +1,25 @@
+<h1>New User</h1>
+<%= form_for(@user) do |u| %>
+<div>
+    <%= u.label :first_name %>
+    <%= u.text_field :first_name %>
+</div>
+<div>
+    <%= u.label :last_name %>
+    <%= u.text_field :last_name %>
+</div>
+<%= u.label :company_id %>
+<%= u.text_field :company_id %>
+<div>
+   <%= u.label :project_id %>
+    <%= u.text_field :project_id %>
+</div>
+<div>
+    <%= u.label :work_id %>
+    <%= u.text_field :work_id %>
+</div>
+<div>
+    <%= u.submit "New User" %>
+</div>
+<% end %>
+<%= link_to "User Home",users_path %>
