@@ -1,6 +1,25 @@
-<h1>Companies edit</h1>
-<ul>
-<% @company.each do |company| %>
-    <li><%= link_to  company.id,company %></li>
-<% end %>
+<h1>Company Edit</h1>
+#to set if flash condition
 
+<%= flash[:notice] %>
+
+	<% if @company.errors.any? %>
+		<div id="errors">
+			<p>Please correct the following <%= pluralize(@company.errors.count, "error") %>:</p>
+			<ul>
+				<% @company.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+<%= form_for(@company) do |f| %>
+	<div><br>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.submit "Create Company" %>
+	</div>
+<% end %>
+<%= link_to "Company Home",companies_path %>

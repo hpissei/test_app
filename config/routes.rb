@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root "welcome#index"
   get 'welcome/index'
   get 'projects/new','projects#new'
+  get 'works/new'=>'works#new'
+  get 'users/new'=>'users#new'
+  get 'companies/new'=>'companies#new'
+  get 'companies/edit'=>'companies#edit'
   resources:companies
   resources:users
   resources:projects

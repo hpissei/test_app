@@ -7,7 +7,13 @@ class CompaniesController < ApplicationController
         @company=Company.new
     end
     def create 
-
+        @company=Company.new(params[:company].permit(:name))
+        if @company.save
+         flash[:notice]="Company Created"
+         redirect_to @company
+        else
+            render 'new'
+        end
     end
     def show
         if(params[:name])
@@ -18,6 +24,7 @@ class CompaniesController < ApplicationController
     end  
     
     def edit
-        @company=Company.all
+        @company=Company.find(params[:id])
+        
     end  
 end

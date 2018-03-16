@@ -2,15 +2,19 @@
 <%= form_for(@work) do |w| %>
     <div>
      <%= w.label :project_id %>
-     <%= w.text_field :project_id %>
+     <%= # w.text_field :project_id 
+     %>
+     <%= w.collection_select(:project_id,Project.all,:id,:project_name,prompt: true) %>
     </div>
     <div>
         <%= w.label :user_id %>
-        <%= w.text_field :user_id %>
+        <%= # w.text_field :user_id 
+        %>
+        <%= w.collection_select(:user_id,User.all,:id,:first_name,prompt:true) %>
     </div>
     <div>
         <%= w.label :date_performed %>
-        <%= w.text_field :date_performed %>
+         <%= w.date_field(:date_performed) %>
     </div>
     <div>
         <%= w.submit "Create New Work" %>

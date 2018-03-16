@@ -2,9 +2,11 @@
 <tr>
     <th>Company Id</th>
     <th>Company Name</th>
+    <th>Edit</th>
 </tr>
 <tr>
 <td><%= @show.id %></td>
 <td><%= @show.name %></td>
+<td><%=  link_to "Edit Details",companies_edit_url(@show) %></td>
 </tr>
 </table>

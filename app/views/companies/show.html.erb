@@ -1,11 +1,15 @@
 <h1>Company Show</h1>
 <output>to work on company projects</output>
 <sample>company reused partial</sample>
+
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<% end %>
 <%= render partial:"company" %>
-<% #= render partial:"partialname",collection:@collection 
+<% #= render partial:"partialname",collection:@collection not working
 %>
 <%= content_for :aside do %>
     <% render 'sidebar' %>    
 <% end %>
 
-<%= link_to "Company Home",company_path %>
+<%= link_to "Company Home",companies_path %>

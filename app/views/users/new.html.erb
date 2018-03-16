@@ -9,14 +9,15 @@
     <%= u.text_field :last_name %>
 </div>
 <%= u.label :company_id %>
-<%= u.text_field :company_id %>
+<%= u.collection_select(:company_id,Company.all,:id,:name) %>
+
 <div>
    <%= u.label :project_id %>
-    <%= u.text_field :project_id %>
+   <%= u.collection_select(:project_id,Project.all,:id,:project_name) %>
 </div>
 <div>
     <%= u.label :work_id %>
-    <%= u.text_field :work_id %>
+    <%= u.collection_select(:work_id,Work.all,:id,:date_performed) %>
 </div>
 <div>
     <%= u.submit "New User" %>
