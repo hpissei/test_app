@@ -13,7 +13,8 @@
         <td><%= company.id %> 
         <td><%= company.name %></td>
         <td><%= link_to  "View Details",company %></td>
-        <td><%= link_to "Edit",companies_edit_path(company) %></td>
+        <td><%=  link_to "Edit",edit_company_path(company.id)
+        %></td>
   
     </tr>
 <% end %>

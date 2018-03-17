@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'works/new'=>'works#new'
   get 'users/new'=>'users#new'
   get 'companies/new'=>'companies#new'
-  get 'companies/edit'=>'companies#edit'
+  # get 'companies/edit/:id'=>'companies#edit'
   resources:companies
   resources:users
   resources:projects
