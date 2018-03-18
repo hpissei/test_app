@@ -1,13 +1,15 @@
 <h1>Project index</h1>
 <table class="table">
-<tr><th>Project Name</th><th>View Details</th></tr>
+<tr><th>Project Name</th><th>View Details</th><th>Edit</th></tr>
 <% @projects.each do |project| %>
     <tr>
         <td><%= project.project_name %></td>
         <td><%= link_to "View Details",project %></td>
+        <td><%= link_to "Edit Details",edit_project_path(project) %></td>
     </tr>
     <% end %>
 </table>
 <br><br>
 <%= link_to "All Project Home",projects_path %>
+
 <%= render partial:"sidebar" %>

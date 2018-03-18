@@ -18,4 +18,18 @@ class UsersController < ApplicationController
     def show
         @user=User.find(params[:id])
     end
+    #edit 
+    def edit
+        @user=User.find(params[:id])
+    end
+    def update
+        @user=User.find(params[:id])
+        
+        if (@user.update(params[:user].permit(:first_name,:last_name,:company_id)))
+            flash[:notice]="User Updated"
+            redirect_to @user
+        else
+            render 'new'
+        end
+    end
 end

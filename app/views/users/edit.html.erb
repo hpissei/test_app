@@ -1,0 +1,18 @@
+<h1>Edit User</h1>
+<%= form_for(@user) do |f|%>
+<div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+</div>
+<div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+</div>
+<div>
+    <%= f.label :company_id %>
+    <%= f.collection_select(:company_id,Company.all,:id,:name) %>
+</div>
+<div>
+    <%= f.submit "Update User" %>
+</div>
+<% end %>

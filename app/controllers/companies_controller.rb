@@ -24,8 +24,7 @@ class CompaniesController < ApplicationController
     end  
     
     def edit
-        @company=Company.find(params[:id])
-        
+        @company=Company.find(params[:id]) 
     end
     def update
         @company=Company.find(params[:id])

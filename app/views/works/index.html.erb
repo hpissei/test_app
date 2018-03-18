@@ -4,6 +4,7 @@
     <th>Work id</th>
     <th>Work project</th>
     <th>View Details</th>
+    <th>Edit Details</th>
 </tr>
 <% @works.each do |work| %>
 
@@ -11,6 +12,7 @@
     <td><%= work.id %></td>
     <td><%= work.project.project_name %></td>
     <td><%= link_to "View Details",work %></td>
+    <td><%= link_to "Edit Details",edit_work_path(work) %></td>
 </tr>
 <% end %>
 </table>

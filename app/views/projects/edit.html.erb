@@ -1,0 +1,21 @@
+<h1>Project Edit </h1>
+<%= form_for(@project) do |p|%>
+<br>
+<div>
+    <%= p.label :project_name %>
+    <%= p.text_field :project_name %>
+</div>
+<div>
+    <%= p.label :company_id %>
+    <%= p.collection_select(:company_id,Company.all,:id,:name,prompt: true) %>
+</div>
+<div>
+    <%= p.label :default_rate %>
+    <%= p.text_field :default_rate %>
+</div>
+
+<div>
+    <%= p.submit "Edit Project" %>
+</div>
+<% end %>
+<%= link_to "Projects Home",projects_path %>
