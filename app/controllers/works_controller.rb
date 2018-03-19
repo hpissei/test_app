@@ -8,6 +8,7 @@ class WorksController < ApplicationController
     def create 
         @work=Work.new(params[:work].permit(:project_id,:user_id,:date_performed))
        if @work.save
+        Usermailer.workcreated_email(@work).deliver
          flash[:notice]="Work created"
          redirect_to @work
         else
@@ -30,4 +31,9 @@ class WorksController < ApplicationController
             render 'new'
         end
     end
+    #email method
+    def workcreated_email(work)
+        @work=work
+        @work=mail(to:work.project.user.email,subject:"Work Item Posted")
+    end    
 end
