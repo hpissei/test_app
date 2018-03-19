@@ -11,7 +11,7 @@ one:
   company_id: 1
   project_id: 1
   work_id: 1
-
+  email: hp@hp.com
 
 two: 
   id: 2
@@ -20,7 +20,7 @@ two:
   company_id: 1
   project_id: 1
   work_id: 2
-
+  email: ak@hp.com
 three: 
   id: 3
   first_name: Yash
@@ -28,7 +28,7 @@ three:
   company_id: 1
   project_id: 1
   work_id: 3
-
+  email: yv@hp.com
 four: 
   id: 4
   first_name: Anand
@@ -36,7 +36,7 @@ four:
   company_id: 1
   project_id: 1
   work_id: 4
-
+  email: as@hp.com
 five: 
   id: 5
   first_name: Hemant
@@ -44,7 +44,7 @@ five:
   company_id: 2
   project_id: 2
   work_id: 5
-
+  email: hr@hp.com
 six: 
   id: 6
   first_name: Heetesh
@@ -52,4 +52,4 @@ six:
   company_id: 2
   project_id: 2
   work_id: 6
-
+  email: hp1@hp.com

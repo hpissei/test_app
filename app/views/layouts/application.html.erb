@@ -14,7 +14,7 @@
 
  <%= image_tag("timetracker_logo_black.png", :alt => "logo",:width=>800 ,:height=>80) %>
   <nav class="navbar navbar-light"> 
-    
+     
     <div class="navbar-brand">
          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,8 @@
     </ul>
     </div>
     </header>
+    <p class="notice"><%= notice  %></p>
+       <p class="alert"><%= alert %></p>
     <section id="main">
     
 		<article>
@@ -47,6 +49,15 @@
     </aside>    
 </div>
 
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
   <footer>
     <br>
     <p style="color:white;"><b>Time Tracker is a <em>Sample Company</em> App</b></p>

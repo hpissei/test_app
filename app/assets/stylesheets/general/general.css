@@ -20,3 +20,17 @@ input[type="text"]
     width:600px;
     border-radius: 8px solid white;
 }
+p.notice 
+{
+    width:100%;
+    background-color: green;
+    height: 30px;
+    color:white;
+}
+p .alert
+{
+    width:100%;
+    background-color: red;
+    height: 30px;
+    color:white;
+}
