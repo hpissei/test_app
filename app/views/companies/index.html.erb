@@ -6,6 +6,7 @@
     <th>Company Name</th>
     <th>View Details</th>  
     <th>Edit Details</th>  
+    <th>Delete Company</th>
 </tr>
 
 <% @company.each do |company| %>
@@ -15,7 +16,7 @@
         <td><%= link_to  "View Details",company %></td>
         <td><%=  link_to "Edit",edit_company_path(company.id)
         %></td>
-  
+        <td><%= link_to "Delete", company_destroy_path(company.id), method: :delete, data: {confirm: "You sure?"} %></td>
     </tr>
 <% end %>
 </table><br>

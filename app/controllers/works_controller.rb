@@ -9,6 +9,11 @@ class WorksController < ApplicationController
         @work=Work.new(params[:work].permit(:project_id,:user_id,:date_performed))
        if @work.save
         Usermailer.workcreated_email(@work).deliver
+        #file upload code
+        uploaded_io=params[:doc]
+        File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
+            file.write(uploaded_io.read) 
+        end   
          flash[:notice]="Work created"
          redirect_to @work
         else
