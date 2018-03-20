@@ -20,17 +20,24 @@ input[type="text"]
     width:600px;
     border-radius: 8px solid white;
 }
-p.notice 
+.notice 
 {
     width:100%;
     background-color: green;
     height: 30px;
     color:white;
 }
-p .alert
+.alert
 {
     width:100%;
     background-color: red;
+    height: 60px;
+    color:white;
+    text-align: center;
+}
+flash {
+    width:100%;
+    background-color: green;
     height: 30px;
     color:white;
 }

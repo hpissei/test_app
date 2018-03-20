@@ -30,16 +30,31 @@
     </ul>
     </div>
     </header>
-    <p class="notice"><%= notice  %></p>
-       <p class="alert"><%= alert %></p>
+    <div class="lead">
+    <% if notice %>
+       <div class="notice" onclick="notify()" id="notification"><%= notice  %> 
+       <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20,:id=>"notification") %></div>
+    <% end %>
+    <% if alert %>
+       <div class="alert" onclick="notify()" id="notification"><%= alert  %> <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20) %></div>
+    <% end %>
+       </div>
     <section id="main">
     
 		<article>
-			<% [:notice, :alert].each do |level| %>
-				<% if flash[level] %>
-					<div class="flash <%= level %>"><%= flash[level] %></div>
-				<% end %>
-		    <% end %>
+      <%
+      #[:notice, :alert].each do |level| 
+        %>
+        <% 
+        #if flash[level]
+           %>
+        <div class="flash <%= #level 
+        %>"><%= #flash[level]  #notice and alert and flash
+       
+          %></div>  
+        <% # end %>
+        <% #end 
+            %>
 			<%= yield %>
 		</article>
 		
