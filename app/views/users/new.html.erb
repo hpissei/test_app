@@ -1,19 +1,19 @@
 <h1>New User</h1>
 <%= form_for(@user) do |u| %>
-<div>
+<div class="form-group">
     <%= u.label :first_name %>
-    <%= u.text_field :first_name %>
+    <%= u.text_field :first_name,class:"form-control" %>
 </div>
-<div>
+<div class="form-group">
     <%= u.label :last_name %>
-    <%= u.text_field :last_name %>
+    <%= u.text_field :last_name,class:"form-control" %>
 </div>
-<div>
+<div class="form-group">
 <%= u.label :company_id %>
-<%= u.collection_select(:company_id,Company.all,:id,:name) %>
+<%= u.collection_select(:company_id,Company.all,:id,:name,{:class=>"form-control"}) %>
 </div>
-<div>
-    <%= u.submit "New User" %>
+<div class="form-group">
+    <%= u.submit "New User",class:"btn btn-primary" %>
 </div>
 <% end %>
 <%= link_to "User Home",users_path %>

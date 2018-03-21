@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
     def index
+        #User.paginate(:page => params[:page], :per_page => 5)
         @works=Work.all
     end
     def new
@@ -8,12 +9,12 @@ class WorksController < ApplicationController
     def create 
         @work=Work.new(params[:work].permit(:project_id,:user_id,:date_performed))
        if @work.save
-        Usermailer.workcreated_email(@work).deliver
+       # Usermailer.workcreated_email(@work).deliver
         #file upload code
-        uploaded_io=params[:doc]
-        File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
-            file.write(uploaded_io.read) 
-        end   
+        #uploaded_io=params[:doc]
+        #File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
+         #   file.write(uploaded_io.read) 
+       # end   
          flash[:notice]="Work created"
          redirect_to @work
         else
@@ -37,8 +38,18 @@ class WorksController < ApplicationController
         end
     end
     #email method
-    def workcreated_email(work)
-        @work=work
-        @work=mail(to:work.project.user.email,subject:"Work Item Posted")
+    #def workcreated_email(work)
+     #   @work=work
+     #   @work=mail(to:work.project.user.email,subject:"Work Item Posted")
+    #end
+        
+    def destroy
+        @work=Work.find(params[:id])
+        if(@work.destroy)
+            flash[:notice]="Work Item is deleted"
+            redirect_to works_url
+        else
+            flash[:notice]="Work Item is not deleted"
+        end
     end    
 end

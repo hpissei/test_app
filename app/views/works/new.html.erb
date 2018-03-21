@@ -1,23 +1,38 @@
+<div class="container">
 <h1>New Work Form</h1>
+
+<% if @work.errors.any? %>
+<div id="errors">
+			<p>Please correct the following <%= pluralize(@work.errors.count, "error") %>:</p>
+<div class="alert alert-danger">
+<ul>
+    <%= @work.errors.full_messages do |msg| %>     
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+</div></div>
+<% end %>
+
 <%= form_for(@work) do |w| %>
-    <div>
+    <div class="form-group">
      <%= w.label :project_id %>
      <%= # w.text_field :project_id 
      %>
      <%= w.collection_select(:project_id,Project.all,:id,:project_name,prompt: true) %>
     </div>
-    <div>
+    <div class="form-group">
         <%= w.label :user_id %>
         <%= # w.text_field :user_id 
         %>
         <%= w.collection_select(:user_id,User.all,:id,:first_name,prompt:true) %>
     </div>
-    <div>
+    <div class="form-group">
         <%= w.label :date_performed %>
          <%= w.date_field(:date_performed) %>
     </div>
-    <div>
-        <%= w.submit "Create New Work" %>
+    <div class="form-group">
+        <%= w.submit "Create New Work",class:"btn btn-primary" %>
     </div>
 <% end %>
 <%= link_to "Work Home",works_path %>
+</div>

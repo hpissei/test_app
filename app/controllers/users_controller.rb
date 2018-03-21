@@ -12,6 +12,7 @@ class UsersController < ApplicationController
             flash[:notice]="New User Created"
             redirect_to @user
         else
+            flash[:notice]="Unable to create user"
             render 'new'
         end
     end
@@ -34,5 +35,14 @@ class UsersController < ApplicationController
     end
     def signin
 
-    end       
+    end     
+    def destroy
+        @user=User.find(params[:id])
+        if(@user.destroy)
+            flash[:notice]="User deleted successfully"
+            redirect_to users_url
+        else
+            flash[:notice]="Unable to delete the user"
+        end  
+    end
 end

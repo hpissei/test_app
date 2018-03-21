@@ -1,21 +1,25 @@
 <h1>Work index</h1>
+<div class="container">
 <table class="table">
 <tr>
     <th>Work id</th>
-    <th>Work project</th>
+    <!--<th>Work project</th>-->
     <th>View Details</th>
     <th>Edit Details</th>
+    <th>Delete</th>
 </tr>
 <% @works.each do |work| %>
 
 <tr>
     <td><%= work.id %></td>
-    <td><%= work.project.project_name %></td>
+    <td><%= #work.project.project_name 
+    %></td>
     <td><%= link_to "View Details",work %></td>
     <td><%= link_to "Edit Details",edit_work_path(work) %></td>
+    <td><%= link_to "Delete Details",work_delete_path(work),method: :delete,data:{confirm:"Are you sure you want to delete the Work Item?"} %></td>
 </tr>
 <% end %>
 </table>
-
+</div>
 <%= link_to "Work Home",works_path %>
 <%= link_to "New Work",works_new_path %>

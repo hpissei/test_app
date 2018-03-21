@@ -1,16 +1,15 @@
 <h1>Users index</h1>
 <table class="table">
-    <tr><th>First Name</th> <th>Details</th><th>Edit Details</th></tr>
+    <tr><th>First Name</th><th>Details</th><th>Edit Details</th><th>Delete</th></tr>
     <% @users.each do |user| %>
     <tr> 
        <td><%= user.first_name %></td>
-       
         <td><%= link_to "View Details",user %><td>
         <td><%= link_to "Edit",edit_user_path(user) %></td>
+        <td><%=  link_to "Delete",user_delete_path(user),method: :delete,data:{confirm:"Are you sure you want to delete this user"} %></td>
     </tr>
     <% end %>
-    <tr></tr>
 </table>
 
 <%= link_to "User Home",users_path %>
-<%= link_to "User New",users_new_url %>
+<%= link_to "User New",user_new_url %>

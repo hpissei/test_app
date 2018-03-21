@@ -36,4 +36,14 @@ class CompaniesController < ApplicationController
                 render 'edit'
         end
     end  
+    #destroy method
+    def destroy
+        @company=Company.find(params[:id])
+        if(@company.destroy)
+            flash[:notice]="Company deleted"
+            redirect_to companies_url
+        else
+            flash[:notice]="Unable to delete company!!!"
+        end 
+    end
 end

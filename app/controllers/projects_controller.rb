@@ -31,7 +31,16 @@ class ProjectsController < ApplicationController
         else
             render 'new'
         end
-
     end
-    
+    #destroy
+    def destroy
+        @project=Project.find(params[:id])
+        if(@project.destroy)
+            flash[:notice]="Project deleted successfully"
+            redirect_to projects_url
+        else
+            flash[:notice]="Unable to delete Project!!!"
+            redirect_to projects_url
+        end
+    end
 end

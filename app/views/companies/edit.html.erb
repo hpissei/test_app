@@ -14,12 +14,12 @@
 		</div>
 	<% end %>
 <%= form_for(@company) do |f| %>
-	<div><br>
+	<div class="form-group">
 		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%= f.text_field :name,class:"form-control" %>
 	</div>
-	<div>
-		<%= f.submit "Create Company" %>
+	<div class="form-group">
+		<%= f.submit "Create Company",class:"btn btn-primary" %>
 	</div>
 <% end %>
 <%= link_to "Company Home",companies_path %>
