@@ -1,0 +1,35 @@
+ <header>
+ 
+
+ <%= image_tag("timetracker_logo_black.png", :alt => "logo",:width=>300 ,:height=>30,:style=>"height:40px;padding-top:10px") %>
+
+  <nav class=""> 
+     
+    <div class="navbar-brand">
+         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-right">
+        <li class="nav-item active"><%= link_to "Home",root_path %></li>
+        <li><%= link_to "Project",projects_path %></li>
+        <li><%= link_to "Work",works_path %></li>
+        <li><%= link_to "User",users_path %></li>
+        <li><%= link_to "Company",companies_path %></li>
+        <% if user_signed_in? %>
+         <li style="color:tan;">
+            <%= "Welcome #{current_user.email}" %>
+        </li>
+        <li>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+        </li>
+        <% else %>
+        <li>
+             <%= link_to('Login', new_user_session_path)  %>  
+        </li>
+        <% end %>
+    </ul>
+    </div>
+    </nav>
+    </header>

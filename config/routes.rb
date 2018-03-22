@@ -1,34 +1,43 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :articles
 
+  resources :articles
+ ################################## root route ############################################
   root "welcome#index"
   get 'welcome/index'
-  get 'projects/new','projects#new'
-  get 'works/new'=>'works#new'
-  get 'users/new'=>'users#new',as: :user_new
+ 
+
+
+ 
+######################################company routes ######################################
+  resources:companies, except: :destroy
   get 'companies/new'=>'companies#new'
   # get 'companies/edit/:id'=>'companies#edit'
-  resources:companies, except: :destroy
- ########################## 
  delete 'companies/:id' => 'companies#destroy',as: :company_delete
  #, except: :destroy
 
-  
+######################################project routes ######################################
   resources:projects
+  delete 'projects/:id'=>'project#destroy',as: :project_delete
+  get 'projects/new','projects#new'
+
+######################################work routes ######################################
   resources:works,except: :destroy
-  #############################
+  get 'works/new'=>'works#new'
   delete 'works/:id'=>'works#destroy',as: :work_delete
-  resources:users
- delete 'users/:user'=>'users#destroy',as: :user_delete
- ########################## 
- delete 'projects/:id'=>'project#destroy',as: :project_delete
- ###########################
- #get 'users/:id'=>'users#new',as: :new_user
-  #delete 'works/:id'=>'works#destroy',as: :work_delete
-  get 'welcome/home',to:'welcome#home'
   #slug route 
   get 'companyname/:name',to:"companies#show"
+
+###################################### user routes   #######################################
+  devise_for :users
+  resources:users 
+  delete 'users/:user'=>'users#destroy',as: :user_delete 
+  #get 'users/new'=>'users#new',as: :user_new
+  get 'usernew/create'=>'users#new',as: :user_new_create
+
+
+  #delete 'works/:id'=>'works#destroy',as: :work_delete
+  get 'welcome/home',to:'welcome#home'
+ 
   #delete path for project
 
 

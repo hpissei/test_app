@@ -9,8 +9,17 @@ class CompaniesController < ApplicationController
     end
     def create 
         @company=Company.new(params[:company].permit(:name))
+        
         if @company.save
          flash[:notice]="Company Created"
+            #file upload code
+        if params[:company][:doc]
+        uploaded_io=params[:company][:doc]
+                File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
+                        file.write(uploaded_io.read) 
+                        @work.doc=uploaded_io.original_filename
+                end
+        end
          redirect_to @company
         else
             render 'new'

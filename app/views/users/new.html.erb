@@ -12,6 +12,7 @@
 <%= u.label :company_id %>
 <%= u.collection_select(:company_id,Company.all,:id,:name,{:class=>"form-control"}) %>
 </div>
+
 <div class="form-group">
     <%= u.submit "New User",class:"btn btn-primary" %>
 </div>

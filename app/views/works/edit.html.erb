@@ -1,16 +1,18 @@
 <h1>Work Edit</h1>
+<div class="container">
 <%= form_for(@work) do |f| %>
-    <div>
+    <div  class="form-group">
     <%= f.label :project_id %>
     <%= f.collection_select(:project_id,Project.all,:id,:project_name) %>
     <div>
-    <div>
+    <div  class="form-group">
     <%= f.label :user_id %>
-    <%= f.collection_select(:user_id,User.all,:id,:first_name) %>
+    <%= f.collection_select(:user_id,User.all,:id,:first_name,:class=>"form-control") %>
     </div>
-    <div>
+    <div class="form-group">
         <%= f.label :date_performed %>
-        <%= f.date_field(:date_performed) %>
+        <%= f.date_field(:date_performed, {include_blank: true},{class: "form-control"}) %>
     </div>
-    <%= f.submit "Edit Work" %>
+    <%= f.submit "Edit Work",class:"btn btn-primary" %>
 <% end %>
+</div>

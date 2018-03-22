@@ -31,6 +31,9 @@
          <%= w.date_field(:date_performed) %>
     </div>
     <div class="form-group">
+        <%= w.file_field :doc %>
+    </div> 
+    <div class="form-group">
         <%= w.submit "Create New Work",class:"btn btn-primary" %>
     </div>
 <% end %>

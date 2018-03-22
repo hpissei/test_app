@@ -1,12 +1,13 @@
-<h1>Work index</h1>
+<!-- <th>Work project</th> -->
 <div class="container">
+<h1>Work index</h1>
 <table class="table">
-<tr>
-    <th>Work id</th>
-    <!--<th>Work project</th>-->
+<tr colspan="3">
+    <th style="width:auto;">Work id</th>
     <th>View Details</th>
     <th>Edit Details</th>
     <th>Delete</th>
+    <th>Document</th>
 </tr>
 <% @works.each do |work| %>
 
@@ -17,9 +18,13 @@
     <td><%= link_to "View Details",work %></td>
     <td><%= link_to "Edit Details",edit_work_path(work) %></td>
     <td><%= link_to "Delete Details",work_delete_path(work),method: :delete,data:{confirm:"Are you sure you want to delete the Work Item?"} %></td>
+    <td><%= link_to "Document","/uploads/#{work.doc}",:target=>"_blank" %></td> 
 </tr>
 <% end %>
 </table>
+        <div  class="pagination">
+            <%= will_paginate @works, page_links: false  , class:'btn btn-primary'%>
+        </div>
 </div>
 <%= link_to "Work Home",works_path %>
 <%= link_to "New Work",works_new_path %>

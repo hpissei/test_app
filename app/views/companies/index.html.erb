@@ -1,6 +1,9 @@
-<h1>Companies index</h1>
 
-<table class="table">
+<h1>Companies index</h1>
+<aside>
+    <%= render partial:"sidebar" %> 
+</aside>
+<table class="table table-responsive">
 <tr>
     <th>Company Id</th>
     <th>Company Name</th>
@@ -17,13 +20,12 @@
         <td><%=  link_to "Edit",edit_company_path(company.id)
         %></td>
         <td><%= link_to "Delete", company_delete_path(company.id), method: :delete, data: {confirm: "You sure you want to delete the company ?"} %></td>
+       
     </tr>
 <% end %>
 </table><br>
 <%= link_to "Company Home",companies_path %>
 <%= link_to "Company New",companies_new_path %>
 
-<aside>
-    <%= render partial:"sidebar" %> 
-</aside>
+
 

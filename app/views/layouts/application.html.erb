@@ -9,32 +9,14 @@
   </head>
 
   <body>
-  <header>
- 
+  <%= ################# 
+%>
 
- <%= image_tag("timetracker_logo_black.png", :alt => "logo",:width=>300 ,:height=>30,:style=>"height:40px;padding-top:10px") %>
-
-  <nav class=""> 
-     
-    <div class="navbar-brand">
-         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><%= link_to "Home",root_path %></li>
-        <li><%= link_to "Project",projects_path %></li>
-        <li><%= link_to "Work",works_path %></li>
-        <li><%= link_to "User",users_path %></li>
-           <li><%= link_to "Company",companies_path %></li>
-    </ul>
-    </div>
-    </header>
+    <%= render partial:'layouts/header' %>
     <div class="lead">
     <% if notice %>
        <div class="notice" onclick="notify()" id="notification"><%= notice  %> 
-       <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20,:id=>"notification") %></div>
+       <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20) %></div>
     <% end %>
     <% if alert %>
        <div class="alert" onclick="notify()" id="notification"><%= alert  %> <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20) %></div>
@@ -65,15 +47,7 @@
     </aside>    
 </div>
 
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
+
   <footer>
     <br>
     <p style="color:white;"><b>Time Tracker is a <em>Sample Company</em> App</b></p>

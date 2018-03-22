@@ -10,12 +10,24 @@ class UsersController < ApplicationController
         @user=User.new(params[:user].permit(:first_name,:last_name,:company_id,:project_id,:work_id))
         if @user.save
             flash[:notice]="New User Created"
-            redirect_to @user
+            redirect_to users_path
         else
             flash[:notice]="Unable to create user"
             render 'new'
         end
     end
+    def create_new
+         
+        @user=User.new(params[:user].permit(:first_name,:last_name,:company_id,:project_id,:work_id))
+        if @user.save
+            flash[:notice]="New User Created"
+            redirect_to users_new_create_path(@user)
+        else
+            flash[:notice]="Unable to create user"
+            render 'new'
+        end
+    end
+    
     def show
         @user=User.find(params[:id])
     end

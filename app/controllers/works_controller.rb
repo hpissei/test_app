@@ -1,20 +1,20 @@
 class WorksController < ApplicationController
     def index
-        #User.paginate(:page => params[:page], :per_page => 5)
-        @works=Work.all
+        @works=Work.all.paginate(page: params[:page],per_page: 5)
     end
     def new
         @work=Work.new
     end
     def create 
         @work=Work.new(params[:work].permit(:project_id,:user_id,:date_performed))
+         if(params[:work][:doc])
+             uploaded_io=params[:work][:doc]
+                File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
+                        file.write(uploaded_io.read) 
+                        @work.doc=uploaded_io.original_filename
+                  end
+        end
        if @work.save
-       # Usermailer.workcreated_email(@work).deliver
-        #file upload code
-        #uploaded_io=params[:doc]
-        #File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |file|
-         #   file.write(uploaded_io.read) 
-       # end   
          flash[:notice]="Work created"
          redirect_to @work
         else

@@ -6,6 +6,7 @@ header
     padding:2%  2% 1% 2%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+   
 }
 body{
     background-color: tan;
@@ -40,4 +41,11 @@ flash {
     background-color: green;
     height: 30px;
     color:white;
+}
+.pagination
+{
+    float:right;
+    color:tan;
+    text-decoration: none;
+
 }
