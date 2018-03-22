@@ -10,17 +10,21 @@ Rails.application.routes.draw do
   get 'companies/new'=>'companies#new'
   # get 'companies/edit/:id'=>'companies#edit'
   resources:companies, except: :destroy
-  delete 'companies/:id' => 'companies#destroy',as: :company_delete
+ ########################## 
+ delete 'companies/:id' => 'companies#destroy',as: :company_delete
  #, except: :destroy
 
   
   resources:projects
   resources:works,except: :destroy
+  #############################
   delete 'works/:id'=>'works#destroy',as: :work_delete
   resources:users
-  delete 'users/:user'=>'users#destroy',as: :user_delete
-  delete 'projects/:id'=>'project#destroy',as: :project_delete
-  get 'users/:id'=>'users#new',as: :new_user
+ delete 'users/:user'=>'users#destroy',as: :user_delete
+ ########################## 
+ delete 'projects/:id'=>'project#destroy',as: :project_delete
+ ###########################
+ #get 'users/:id'=>'users#new',as: :new_user
   #delete 'works/:id'=>'works#destroy',as: :work_delete
   get 'welcome/home',to:'welcome#home'
   #slug route 
