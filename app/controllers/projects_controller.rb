@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+   # before_filter :only_admins_create_update_project,only: [:new,:create,:edit,:update]
     def index
         @projects=Project.all.paginate(:page=>params[:page],:per_page=>5)
         respond_to do |format|
@@ -62,7 +63,14 @@ class ProjectsController < ApplicationController
             redirect_to projects_url
         end
     end
-    def to_s
-        "Project Title: #{project_name},Company Id:#{company_id}, Default Rate:#{default_rate}"
+ #before admin filter function not working
+=begin
+    def only_admins_create_update_project
+        redirect_to projects_path
+        flash[:notice]="Only admins can create /modify the projects"
+        unless
+            current_user.admin
+            end
     end
+=end
 end

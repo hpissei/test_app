@@ -12,7 +12,7 @@ one:
   project_id: 1
   work_id: 1
   email: hp@hp.com
-
+  admin: true
 two: 
   id: 2
   first_name: Akshay
@@ -21,6 +21,7 @@ two:
   project_id: 1
   work_id: 2
   email: ak@hp.com
+  admin: false
 three: 
   id: 3
   first_name: Yash
@@ -29,6 +30,7 @@ three:
   project_id: 1
   work_id: 3
   email: yv@hp.com
+  admin: false
 four: 
   id: 4
   first_name: Anand
@@ -37,6 +39,7 @@ four:
   project_id: 1
   work_id: 4
   email: as@hp.com
+  admin: false
 five: 
   id: 5
   first_name: Hemant
@@ -45,6 +48,7 @@ five:
   project_id: 2
   work_id: 5
   email: hr@hp.com
+  admin: false
 six: 
   id: 6
   first_name: Heetesh
@@ -53,3 +57,4 @@ six:
   project_id: 2
   work_id: 6
   email: hp1@hp.com
+  admin: false
