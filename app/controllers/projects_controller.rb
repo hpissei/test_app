@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
     def index
         @projects=Project.all.paginate(:page=>params[:page],:per_page=>5)
+        respond_to do |format|
+            format.html 
+            format.json {render json:@projects }
+            format.xml {render xml:@projects}
+        end
     end
     #new and create for new
     def new
@@ -17,7 +22,7 @@ class ProjectsController < ApplicationController
         end
             mail.to_s
 =end
-       # mail(to:'heetesh.panghanti@harbingergroup.com', subject: 'Welcome to My Awesome Site')
+        mail(to:'heetesh.panghanti@harbingergroup.com', subject: 'Welcome to My Awesome Site')
     end
     def create
         @project=Project.new(params[:project].permit(:project_name,:company_id,:default_rate))
@@ -56,5 +61,8 @@ class ProjectsController < ApplicationController
             flash[:notice]="Unable to delete Project!!!"
             redirect_to projects_url
         end
+    end
+    def to_s
+        "Project Title: #{project_name},Company Id:#{company_id}, Default Rate:#{default_rate}"
     end
 end

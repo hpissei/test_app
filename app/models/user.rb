@@ -7,5 +7,10 @@ class User < ApplicationRecord
     belongs_to:company
     belongs_to :company
 	has_many :works
-	has_many :projects, :through => :works
+  has_many :projects, :through => :works
+  
+
+  def to_s
+     "First_name #{first_name} last Name #{last_name}"
+    end
 end

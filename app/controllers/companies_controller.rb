@@ -2,6 +2,12 @@ class CompaniesController < ApplicationController
 
     def index
         @company=Company.all.paginate(:page=>params[:page],:per_page=>5)
+        respond_to do |format|
+            format.html
+            format.json {render json: @company}
+            format.xml {render xml: @company}
+        end
+      
     end
     #new form
     def new

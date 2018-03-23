@@ -11,5 +11,7 @@ class Project < ApplicationRecord
 
     }
 
-
+    def to_s
+        "Project Name #{project_name} Company Id #{company_id} Default Rate #{default_rate}"
+    end
 end

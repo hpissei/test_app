@@ -5,4 +5,8 @@ class Company < ApplicationRecord
         name
     end
     validates:name,presence:true,length:{minimum:3}
+
+    def to_s
+        "Company Name: #{name}"
+    end
 end
