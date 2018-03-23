@@ -29,7 +29,11 @@ Rails.application.routes.draw do
 
 ###################################### user routes   #######################################
   devise_for :users
-  resources:users 
+  resources:users  do
+    collection do
+         get 'new_user_account'=>'users#new'
+     end
+  end
   delete 'users/:user'=>'users#destroy',as: :user_delete 
   #get 'users/new'=>'users#new',as: :user_new
   get 'usernew/create'=>'users#new',as: :user_new_create

@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1>Companies index</h1>
 <aside>
     <%= render partial:"sidebar" %> 
@@ -24,6 +24,8 @@
     </tr>
 <% end %>
 </table><br>
+<%= will_paginate @company,:class=>" ",:style=>"float:right;" %>
+</div>
 <%= link_to "Company Home",companies_path %>
 <%= link_to "Company New",companies_new_path %>
 

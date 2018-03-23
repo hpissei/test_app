@@ -1,3 +1,15 @@
+<div class="container">
+<div class="errors">
+    <% if @project.errors.any? %>
+        <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+            <li class="alert alert-danger"><%= msg %> </li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
+</div>
+<div class="container">
 <h1>Project New </h1>
 <%= form_for(@project) do |p|%>
 <br>
@@ -18,4 +30,7 @@
     <%= p.submit "Create Project",class:"btn btn-primary" %>
 </div>
 <% end %>
+
 <%= link_to "Projects Home",projects_path %>
+
+</div>

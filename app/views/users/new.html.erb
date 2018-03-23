@@ -1,3 +1,11 @@
+<div class="container">
+    <% if @user.errors.any? %>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li class="alert alert-danger"><% =msg %></li>
+        </ul>
+    <% end %>
+</div>
 <h1>New User</h1>
 <%= form_for(@user) do |u| %>
 <div class="form-group">

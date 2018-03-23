@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
 
     def index
-        @company=Company.all
+        @company=Company.all.paginate(:page=>params[:page],:per_page=>5)
     end
     #new form
     def new

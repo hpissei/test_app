@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Project index</h1>
 <table class="table">
 <tr><th>Project Name</th><th>View Details</th><th>Edit</th><th>Delete</th></tr>
@@ -12,6 +13,8 @@
     <% end %>
 </table>
 <br><br>
+<%= will_paginate @projects,:class=>"",:style=>"float:right;" %>
+</div>
 <%= link_to "All Project Home",projects_path %>
 
 <%= render partial:"sidebar" %>

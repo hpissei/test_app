@@ -6,8 +6,8 @@
 			<p>Please correct the following <%= pluralize(@work.errors.count, "error") %>:</p>
 <div class="alert alert-danger">
 <ul>
-    <%= @work.errors.full_messages do |msg| %>     
-    <li><%= msg %></li>
+    <% @work.errors.full_messages do |msg| %>     
+    <li class="alert alert-danger"><%= msg %></li>
     <% end %>
 </ul>
 </div></div>
