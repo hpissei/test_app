@@ -1,3 +1,10 @@
+ <% if current_user.admin!=true %>
+ <% flash[:notice]="You nee to have admin priveledges to edit user!" %>
+ <script>
+ window.location="\\users";
+ </script>
+ <%else %>
+<div class="container">
 <h1>Edit User</h1>
 <%= form_for(@user) do |f|%>
 <div class="form-group">
@@ -16,3 +23,5 @@
     <%= f.submit "Update User",class:"btn btn-primary" %>
 </div>
 <% end %>
+</div>
+<%end%>

@@ -1,11 +1,19 @@
-<div class="container">
+ <% if current_user.admin!=true %>
+ <% flash[:notice]="You nee to have admin priveledges to add new user!" %>
+ <script>
+ window.location="\\users";
+ </script>
+ <%else%>
+ <div class="container">
     <% if @user.errors.any? %>
         <ul>
         <% @user.errors.full_messages.each do |msg| %>
-            <li class="alert alert-danger"><% =msg %></li>
+            <li class="alert alert-danger"><%= msg %></li>
         </ul>
+        <% end %>
     <% end %>
 </div>
+<div class="container">
 <h1>New User</h1>
 <%= form_for(@user) do |u| %>
 <div class="form-group">
@@ -25,4 +33,7 @@
     <%= u.submit "New User",class:"btn btn-primary" %>
 </div>
 <% end %>
+
 <%= link_to "User Home",users_path %>
+</div>
+<% end %>

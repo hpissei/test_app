@@ -2,29 +2,34 @@
 <div class="container">
 <h1>Work index</h1>
 <table class="table">
-<tr colspan="3">
-    <th style="width:auto;">Work id</th>
-    <th>View Details</th>
-    <th>Edit Details</th>
-    <th>Delete</th>
-    <th>Document</th>
+<tr >
+    <th colspan="1">Work id</th>
+    <th colspan="2">View Details</th>
+    <th colspan="2">Edit Details</th>
+    <% if current_user.admin %> 
+    <th colspan="2">Delete</th>
+    <%end %>
+    <th colspan="2">Document</th>
 </tr>
 <% @works.each do |work| %>
 
 <tr>
-    <td><%= work.id %></td>
-    <td><%= #work.project.project_name 
-    %></td>
-    <td><%= link_to "View Details",work %></td>
-    <td><%= link_to "Edit Details",edit_work_path(work) %></td>
-    <td><%= link_to "Delete Details",work_delete_path(work),method: :delete,data:{confirm:"Are you sure you want to delete the Work Item?"} %></td>
-    <td><%= link_to "Document","/uploads/#{work.doc}",:target=>"_blank" %></td> 
+    <td colspan="1"><%= work.id %></td>
+<!--    <td colspan="2"><%= #work.project.project_name 
+    %></td> -->
+    <td colspan="2"><%= link_to "View Details",work %></td>
+    <td colspan="2"><%= link_to "Edit Details",edit_work_path(work) %></td>
+    <% if current_user.admin %> 
+    <td colspan="2"><%= link_to "Delete Details",work_delete_path(work),method: :delete,data:{confirm:"Are you sure you want to delete the Work Item?"} %></td>
+    <%end %>
+    <td colspan="2"><%= link_to "Document","/uploads/#{work.doc}",:target=>"_blank" %></td> 
 </tr>
 <% end %>
 </table>
         <div  class="pagination">
             <%= will_paginate @works, page_links: false  , class:''%>
         </div>
-</div>
+
 <%= link_to "Work Home",works_path %>
 <%= link_to "New Work",works_new_path %>
+</div>

@@ -1,18 +1,26 @@
-<h1>Work Edit</h1>
+<% if current_user.admin!=true %>
+<% flash[:notice]='You do not have admin priviledges to edit work' %>
+    <script>
+    window.location="\\works"
+    </script>
+<%else %>
+
 <div class="container">
+<h1>Work Edit</h1>
 <%= form_for(@work) do |f| %>
     <div  class="form-group">
     <%= f.label :project_id %>
-    <%= f.collection_select(:project_id,Project.all,:id,:project_name) %>
-    <div>
+    <%= f.collection_select(:project_id,Project.all,:id,:project_name,{:prompt=>"true"},{:class=>"form-control"}) %>
+    <div><br>
     <div  class="form-group">
     <%= f.label :user_id %>
-    <%= f.collection_select(:user_id,User.all,:id,:first_name,:class=>"form-control") %>
+    <%= f.collection_select(:user_id,User.all,:id,:first_name,{:prompt=>true},{:class=>"form-control"}) %>
     </div>
     <div class="form-group">
         <%= f.label :date_performed %>
-        <%= f.date_field(:date_performed, {include_blank: true},{class: "form-control"}) %>
+        <%= f.date_field(:date_performed, {:class=>"form-control"}) %>
     </div>
     <%= f.submit "Edit Work",class:"btn btn-primary" %>
 <% end %>
 </div>
+<% end %>

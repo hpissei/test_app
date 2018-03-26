@@ -18,7 +18,8 @@ class ProjectsController < ApplicationController
              from     'hpultimatemedia@gmail.com'
                to     'heetesh.panghanti@harbingergroup.com'
              subject  'Here is the your first wmail from rails'
-             body     'welcome to mailer'#File.read('body.txt')
+             body     'welcome to mailer'#File.read('body.txt')exit
+             
              #add_file '/full/path/to/somefile.png'
         end
             mail.to_s
@@ -28,6 +29,7 @@ class ProjectsController < ApplicationController
     def create
         @project=Project.new(params[:project].permit(:project_name,:company_id,:default_rate))
         if @project.save
+            
             flash[:notice]='Project Created'
         redirect_to @project
         send_mail

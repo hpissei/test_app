@@ -1,17 +1,24 @@
 <div class="container">
 <h1>Users index</h1>
 <table class="table">
-    <tr><th>First Name</th><th>Details</th><th>Edit Details</th><th>Delete</th></tr>
+    <tr><th>First Name</th><th>Details</th><th>Edit Details</th>
+        <% if current_user.admin %>
+            <th>Delete</th>
+        <%end %>
+    </tr>
     <% @users.each do |user| %>
     <tr> 
        <td><%= user.first_name %></td>
-        <td><%= link_to "View Details",user %><td>
+        <td><%= link_to "View Details",user %></td>
         <td><%= link_to "Edit",edit_user_path(user) %></td>
+        <% if current_user.admin %>
         <td><%=  link_to "Delete",user_delete_path(user),method: :delete,data:{confirm:"Are you sure you want to delete this user"} %></td>
+        <% end %>
     </tr>
     <% end %>
 </table>
 <%= will_paginate @users,:class=>"",:style=>"float:right;" %>
-</div>
 <%= link_to "User Home",users_path %>
 <%= link_to "User New",user_new_create_url %>
+
+</div>

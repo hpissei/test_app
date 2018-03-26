@@ -1,3 +1,10 @@
+<% if current_user.admin!=true %>
+<% flash[:notice]="You do not  have admin priviledges to edit user" %>
+
+<script>
+window.location="/projects"
+</script>
+<%else %>
 <div class="container">
 <h1>Project Edit </h1>
 <%= form_for(@project) do |p|%>
@@ -21,3 +28,5 @@
 <% end %>
 <%= link_to "Projects Home",projects_path %>
 </div>
+
+<%end%>

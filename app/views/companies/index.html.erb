@@ -9,7 +9,9 @@
     <th>Company Name</th>
     <th>View Details</th>  
     <th>Edit Details</th>  
-    <th>Delete Company</th>
+     <%if(current_user.admin)%>
+       <th>Delete Company</th>
+        <%end%>
 </tr>
 
 <% @company.each do |company| %>
@@ -19,8 +21,9 @@
         <td><%= link_to  "View Details",company %></td>
         <td><%=  link_to "Edit",edit_company_path(company.id)
         %></td>
+        <%if(current_user.admin)%>
         <td><%= link_to "Delete", company_delete_path(company.id), method: :delete, data: {confirm: "You sure you want to delete the company ?"} %></td>
-       
+       <%end%>
     </tr>
 <% end %>
 </table><br>

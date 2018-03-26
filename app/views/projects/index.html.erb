@@ -1,20 +1,25 @@
 <div class="container">
 <h1>Project index</h1>
 <table class="table">
-<tr><th>Project Name</th><th>View Details</th><th>Edit</th><th>Delete</th></tr>
+<tr><th>Project Name</th><th>View Details</th><th>Edit</th>
+<% if current_user.admin %>
+<th>Delete</th>
+<%end%>
+</tr>
 <% @projects.each do |project| %>
     <tr>
         <td><%= project.project_name %></td>
         <td><%= link_to "View Details",project %></td>
         <td><%= link_to "Edit Details",edit_project_path(project) %></td>
-        <td><%=
+       
+        <% if current_user.admin %>  <td>
         link_to "Delete",project_delete_path(project.id),method: :delete,data:{confirm:"Are you sure you want to delete the project"}  %></td>
-     </tr>
+        <%end%>
+        </tr>
     <% end %>
 </table>
 <br><br>
 <%= will_paginate @projects,:class=>"",:style=>"float:right;" %>
-</div>
 <%= link_to "All Project Home",projects_path %>
-
 <%= render partial:"sidebar" %>
+</div>
