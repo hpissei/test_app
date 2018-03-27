@@ -1,7 +1,7 @@
  <% if current_user.admin!=true %>
- <% flash[:notice]="You nee to have admin priveledges to edit user!" %>
+ <% flash[:alert]="You nee to have admin priveledges to edit user!" %>
  <script>
- window.location="\\users";
+ redirect_to("\\users");
  </script>
  <%else %>
 <div class="container">

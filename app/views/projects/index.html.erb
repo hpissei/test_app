@@ -2,8 +2,7 @@
 <h1>Project index</h1>
 <table class="table">
 <tr><th>Project Name</th><th>View Details</th><th>Edit</th>
-<% if current_user=="">
-<!-- current_user.admin %>-->
+<% if current_user.admin %>
 <th>Delete</th>
 <%end%>
 </tr>
@@ -21,6 +20,6 @@
 </table>
 <br><br>
 <%= will_paginate @projects,:class=>"",:style=>"float:right;" %>
-<%= link_to "All Project Home",projects_path %>
+
 <%= render partial:"sidebar" %>
 </div>

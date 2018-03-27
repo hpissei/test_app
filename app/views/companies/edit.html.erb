@@ -2,10 +2,10 @@
 
 <% if current_user.admin!=true%>
 
-<%flash[:notice]="You need admin privelidges to perform edit operation!"%>
+<% flash[:alert]="You need admin privelidges to perform edit operation!"%>
 
 <script>
-window.location="\\companies";
+redirect_to("\\companies");
 </script>
 <%else%>
 <h1>Company Edit</h1>

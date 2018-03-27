@@ -1,7 +1,7 @@
 <% if current_user.admin!=true %>
-<% flash[:notice]='You do not have admin priviledges to edit work' %>
+<% flash[:alert]='You do not have admin priviledges to edit work' %>
     <script>
-    window.location="\\works"
+    redirect_to("\\works")
     </script>
 <%else %>
 

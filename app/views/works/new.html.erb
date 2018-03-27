@@ -1,7 +1,7 @@
 <% if current_user.admin!=true %> 
-<% flash[:notice]="You do not have admin priviledges to create new work item!" %>
+<% flash[:alert]="You do not have admin priviledges to create new work item!" %>
     <script>
-        window.location="\\works";
+        redirect_to("\\works");
     </script>
 <% else %>    
 <div class="container">

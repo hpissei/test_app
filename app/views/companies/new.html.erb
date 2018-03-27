@@ -1,9 +1,9 @@
 
 #to set if flash condition
 <% if current_user.admin!=true %>
-<% flash[:notice]="You need admin priviledges to create new company!" %>
+<% flash[:alert]="You need admin priviledges to create new company!" %>
 <script>
-window.location="\\companies";
+redirect_to("\\companies");
 </script>
 <% else %>
 <%= flash[:notice] %>

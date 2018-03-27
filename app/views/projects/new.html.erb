@@ -1,8 +1,8 @@
 <% if current_user.admin!=true %>
-<% flash[:notice]="You do not  have admin priviledges to create new user" %>
+<% flash[:alert]="You do not  have admin priviledges to create new project!" %>
 
 <script>
-window.location="/projects"
+redirect_to("/projects")
 </script>
 <%else %>
 <div class="container">
@@ -38,7 +38,7 @@ window.location="/projects"
 </div>
 <% end %>
 
-<%= link_to "Projects Home",projects_path %>
+
 
 </div>
 <% end %>
