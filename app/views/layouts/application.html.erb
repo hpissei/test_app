@@ -15,11 +15,11 @@
     <%= render partial:'layouts/header' %>
     <div class="lead">
     <% if notice %>
-       <div class="notice" onclick="notify()" id="notification"><%= notice  %> 
+       <div class="notice alert alert-success" onclick="notify()" id="notification"><%= notice  %> 
        <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20) %></div>
     <% end %>
     <% if alert %>
-       <div class="alert" onclick="notify()" id="notification"><%= alert  %> 
+       <div class="alert alert-danger" onclick="notify()" id="notification"><%= alert  %> 
        <%= image_tag("close.png",:alt=>"close button",:width=>20, :height=>20) %></div>
     <% end %>
        </div>
