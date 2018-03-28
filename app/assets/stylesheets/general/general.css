@@ -49,3 +49,11 @@ flash {
     text-decoration: none;
 
 }
+::selection
+{
+    background-color:tan;
+}
+::-moz-selection
+{
+    background-color:tan;
+}
